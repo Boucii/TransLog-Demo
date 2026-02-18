@@ -1,0 +1,56 @@
+nsp53_orig_dnf_best
+case|status|cost|expr|chosen|orig_cost|dnf_cost|note
+NSP_01|ok|5|(bridge a b c a d)|orig|5|5|
+NSP_02|ok|5|(bridge a b d e c)|orig|5|5|
+NSP_03|ok|6|(* e (bridge a b c a d))|orig|6|6|
+NSP_04|ok|6|(+ e (bridge a b c a d))|orig|6|6|
+NSP_05|ok|6|(bridge a d b (* a e) c)|orig|6|6|
+NSP_06|ok|6|(bridge a b d a (* c e))|orig|6|6|
+NSP_07|ok|6|(bridge a b c a (* d e))|orig|6|6|
+NSP_08|ok|6|(bridge a c b (+ a e) d)|orig|6|6|
+NSP_09|ok|6|(bridge a b c a (+ d e))|orig|6|6|
+NSP_10|ok|6|(bridge (* a f) b d e c)|orig|6|6|
+NSP_11|ok|6|(bridge b (+ a f) e d c)|orig|6|6|
+NSP_12|ok|6|(bridge a b d e (* c f))|orig|6|6|
+NSP_13|ok|6|(bridge a b d e (+ c f))|orig|6|6|
+NSP_14|ok|7|(* e (* f (bridge a b c a d)))|orig|7|7|
+NSP_15|ok|7|(* (+ e f) (bridge a c d a b))|orig|7|7|
+NSP_16|ok|7|(* e (+ f (bridge a b c a d)))|orig|7|7|
+NSP_17|ok|7|(+ (* e f) (bridge a b c a d))|orig|7|7|
+NSP_18|ok|7|(+ e (+ f (bridge a b c a d)))|orig|7|7|
+NSP_19|ok|7|(* f (bridge a d b (* a e) c))|orig|7|7|
+NSP_20|ok|7|(+ f (bridge a d b (* a e) c))|orig|7|7|
+NSP_21|ok|7|(* f (bridge a b d a (* c e)))|orig|7|7|
+NSP_22|ok|7|(+ f (bridge (* c e) a a b d))|orig|7|7|
+NSP_23|ok|7|(bridge a d b (* a (* e f)) c)|orig|7|7|
+NSP_24|ok|7|(bridge (+ a (+ e f)) b c a d)|dnf|10|7|
+NSP_25|ok|7|(bridge a d b (* a (+ e f)) c)|orig|7|7|
+NSP_26|ok|7|(bridge (+ a (* e f)) b c a d)|dnf|10|7|
+NSP_27|ok|7|(bridge (* c (* e f)) a a b d)|orig|7|7|
+NSP_28|ok|7|(bridge a b d a (+ f (+ c e)))|orig|7|7|
+NSP_29|ok|7|(bridge a b d a (* c (+ e f)))|orig|7|7|
+NSP_30|ok|7|(bridge a b d a (+ c (* e f)))|orig|7|7|
+NSP_31|ok|7|(bridge a d b (* a e) (* c f))|orig|7|7|
+NSP_32|ok|7|(bridge (+ a e) b d a (* c f))|dnf|11|7|
+NSP_33|ok|7|(bridge a d b (* a e) (+ c f))|orig|7|7|
+NSP_34|ok|9|(+ (* e (+ f c)) (bridge b a a d (+ f c)))|dnf|11|9|
+NSP_35|ok|7|(bridge a (* d f) b (* a e) c)|orig|7|7|
+NSP_36|ok|7|(bridge (+ a e) c b a (* d f))|dnf|9|7|
+NSP_37|ok|7|(bridge a (+ d f) b (* a e) c)|orig|7|7|
+NSP_38|ok|7|(bridge (+ a e) c b a (+ d f))|dnf|10|7|
+NSP_39|ok|7|(bridge a d c (* a e) (* b f))|orig|7|7|
+NSP_40|ok|7|(bridge (+ a e) c d a (* b f))|dnf|10|7|
+NSP_41|ok|7|(bridge a d c (* a e) (+ b f))|orig|7|7|
+NSP_42|ok|9|(+ (* e (+ b f)) (bridge c a a d (+ b f)))|dnf|13|9|
+NSP_43|ok|10|(+ (* a (* e (+ b (* c f)))) (* d (+ (* a f) (* b c))))|orig|10|10|
+NSP_44|ok|9|(+ (* c (* f e)) (bridge a b c (* a f) d))|orig|9|9|
+NSP_45|ok|7|(bridge (+ a f) d b (* a e) c)|dnf|11|7|
+NSP_46|ok|9|(+ (* a (+ b (+ c d))) (bridge b e f d c))|dnf|11|9|
+NSP_47|ok|7|(bridge a c (* d f) a (* b e))|orig|7|7|
+NSP_48|ok|7|(bridge a c (* d f) a (+ b e))|orig|7|7|
+NSP_49|ok|7|(bridge a c (* b e) a (+ d f))|orig|7|7|
+NSP_50|ok|7|(bridge a c (+ b e) a (+ d f))|orig|7|7|
+NSP_51|ok|7|(bridge a d (* c f) a (* b e))|orig|7|7|
+NSP_52|ok|7|(bridge a d (* c f) a (+ b e))|orig|7|7|
+NSP_53|ok|7|(bridge a d (+ c f) a (+ b e))|orig|7|7|
+summary|ok|367|||cases=53|average=6.92||

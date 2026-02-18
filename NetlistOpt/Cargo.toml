@@ -1,0 +1,8 @@
+[package]
+name = "NetlistOpt"
+version = "0.1.0"
+edition = "2024"
+[dependencies]
+egg = "0.10.0"
+espresso-logic = "3.1.2"
+logicng = "0.1.0-alpha.3"
