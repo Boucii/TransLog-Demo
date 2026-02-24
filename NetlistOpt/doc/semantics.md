@@ -44,7 +44,7 @@ table II
 | ! (x)           | connect op to an inverter | 2+cost(op)            |
 | +(a,b)          | form a series(PUN)/parralel(PDN) connection between ops, with a being on the top/left. when op is a cell-type signal, create a mosfet, connect op to its gate first. | cost(op) + num(cell-signal) |
 | * (a,b)         | form a series(PDN)/parralel(PUN) connection between ops, with a being on the top/left. when op is a cell-type signal, create a mosfet, connect op to its gate first. | cost(op) + num(cell-signal) |
-| bridge          | form a bridge (left-top, left-bottom, right-top, right-bottom, middle) connection between ops. when op is a cell-type signal, create a mosfet, connect op to its gate first. | cost(op) + num(cell-signal) |
+| bridge (a,b,c,d,e)          | form a bridge (left-top, left-bottom(PDN)/right-top(PUN), right-top(PDN)/left-bottom(PUN), right-bottom, middle) connection between ops. when op is a cell-type signal, create a mosfet, connect op to its gate first. | cost(op) + num(cell-signal) |
 | &               | virtual output concatenation only | cost(op)              |
 | X               | size literal on var signal | 0       |
 | Bool            | constant literal (vdd/gnd) | 0                     |
