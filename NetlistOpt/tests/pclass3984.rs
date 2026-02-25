@@ -2,7 +2,7 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::fs::{self, File};
 use std::io::{BufWriter, Write};
 use std::path::PathBuf;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 use egg::{BackoffScheduler, EGraph, Id, RecExpr, Runner};
 
@@ -419,6 +419,7 @@ fn run_joinlike_case_portfolio(
 
 #[cfg_attr(test, test)]
 pub fn min_transistor_joinlike_root_3984_pclass_local_rules_report() {
+    let test_start = Instant::now();
     let input_path = project_root()
         .join("testbench")
         .join("3984_P-class")
@@ -556,4 +557,12 @@ pub fn min_transistor_joinlike_root_3984_pclass_local_rules_report() {
         let line = format!("win|{}|count={}", config_name, win_count);
         write_report_line(&mut report, &line);
     }
+
+    let elapsed = test_start.elapsed();
+    let runtime_line = format!(
+        "runtime|elapsed_ms={}|elapsed_sec={:.3}",
+        elapsed.as_millis(),
+        elapsed.as_secs_f64()
+    );
+    write_report_line(&mut report, &runtime_line);
 }

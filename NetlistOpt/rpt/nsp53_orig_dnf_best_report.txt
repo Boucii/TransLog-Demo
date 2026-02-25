@@ -54,3 +54,4 @@ NSP_51|ok|7|(bridge a d (* c f) a (* b e))|orig|7|7|
 NSP_52|ok|7|(bridge a d (* c f) a (+ b e))|orig|7|7|
 NSP_53|ok|7|(bridge a d (+ c f) a (+ b e))|orig|7|7|
 summary|ok|367|||cases=53|average=6.92||
+runtime|elapsed_ms=16378|elapsed_sec=16.379

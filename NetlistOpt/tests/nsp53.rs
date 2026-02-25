@@ -1,7 +1,7 @@
 use std::fs::{self, File};
 use std::io::{BufWriter, Write};
 use std::path::PathBuf;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 use egg::{BackoffScheduler, EGraph, Id, RecExpr, Runner};
 
@@ -125,6 +125,7 @@ fn run_rewrite_stages(
 }
 #[cfg_attr(test, test)]
 pub fn nsp53_staged_rewrite_flow_orig_dnf_best() {
+    let test_start = Instant::now();
     let cases = nsp53_cases();
     let report_path = report_root().join("nsp53_orig_dnf_best_report.txt");
     let report_file = File::create(&report_path)
@@ -313,4 +314,13 @@ pub fn nsp53_staged_rewrite_flow_orig_dnf_best() {
         total_cost, case_count, avg_text
     );
     write_report_line(&mut report, &summary);
+
+    let elapsed = test_start.elapsed();
+    let runtime_line = format!(
+        "runtime|elapsed_ms={}|elapsed_sec={:.3}",
+        elapsed.as_millis(),
+        elapsed.as_secs_f64()
+    );
+    write_report_line(&mut report, &runtime_line);
+    println!("{}", runtime_line);
 }
