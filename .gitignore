@@ -1,3 +1,5 @@
 **/.vscode
 **/.github
 **/target
+**/rpt
+**/temp_sim_test

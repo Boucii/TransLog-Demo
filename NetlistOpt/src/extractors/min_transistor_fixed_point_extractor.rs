@@ -710,7 +710,7 @@ impl<'a> AnyRootFixedPointSolver<'a> {
     }
 
     fn use_instance_level_dedup(&self) -> bool {
-        matches!(self.root_ctx, AnyRootContext::JoinlikeRoot)
+        true
     }
 }
 
